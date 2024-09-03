@@ -22,25 +22,25 @@
                 {
                     //Functions from No.1 to No.6 are Built-In Functions
                     //1. alert 
-                    alert("Let us calculate SI");
+                    alert("Let us calculate CI");
 
                     //2. prompt 
-                    let P = prompt("Please enter Principal Amount");
-                    let R = prompt("Please enter Rate of Interest ");
-                    let N = prompt("Please enter Number of Years ");
+                    let P = parseFloat(prompt("Please enter Principal Amount"));
+                    let R = parseFloat(prompt("Please enter Rate of Interest "));
+                    let N = parseFloat(prompt("Please enter Number of Years "));
                     document.write("You have entered P :  " + P + "<br><br>");
                     document.write("You have entered R :  " + R + "<br><br>");
                     document.write("You have entered N :  " + N + "<br><br>");
 
                     //3. confirm 
-                    let decision = confirm("Shall we proceed to calculate SI?");
-                    if (decision) console.log("You decided to proceed" + "<br><br>");
-                    else console.log("You decided not to proceed" + "<br><br>");
+                    let decision = confirm("Shall we proceed to calculate CI?");
+                    if (decision) document.write("You decided to proceed" + "<br><br>");
+                    else document.write("You decided not to proceed" + "<br><br>");
 
-                    //4. eval  
-                    eval(P * R * N);
-                    document.write("Calculated SI is " + (eval(P * R * N)) / 100 + "<br><br>");
-
+                    //4. Calculate Compound Interest
+                    const A = P * Math.pow((1 + (R / 100)), N);
+                    const CI = A - P;
+                    document.write("Calculated CI is " + CI + "<br><br>");
 
                     //5. setTimeout 
                     function executeMe1() {
@@ -48,9 +48,8 @@
                     }
                     setTimeout(executeMe1, 3000);
 
-                    //6.setInterval 
+                    //6. setInterval 
                     function executeMe2() {
-                        //execute();
                         document.write("Function called at regular interval !!!" + "<br><br>");
                     }
                     setInterval(executeMe2, 3000);
@@ -59,7 +58,7 @@
             </script>
         </div>
     </div>
-    <button onclick="execute();">Click Here to Calculate SI</button>
+    <button onclick="execute();">Click Here to Calculate CI</button>
 </body>
 
 </html>
