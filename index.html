@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Functions Demo</title>
+    <style>
+        body {
+            padding-top: 10px;
+        }
+    </style>
+</head>
+
+<body class="container-fluid">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3>Functions</h3>
+        </div>
+
+        <div class="panel-body">
+            <script>
+                function execute() //User defined Function 
+                {
+                    //Functions from No.1 to No.6 are Built-In Functions
+                    //1. alert 
+                    alert("Let us calculate CI");
+
+                    //2. prompt 
+                    let P = parseFloat(prompt("Please enter Principal Amount"));
+                    let R = parseFloat(prompt("Please enter Rate of Interest "));
+                    let N = parseFloat(prompt("Please enter Number of Years "));
+                    document.write("You have entered P :  " + P + "<br><br>");
+                    document.write("You have entered R :  " + R + "<br><br>");
+                    document.write("You have entered N :  " + N + "<br><br>");
+
+                    //3. confirm 
+                    let decision = confirm("Shall we proceed to calculate CI?");
+                    if (decision) document.write("You decided to proceed" + "<br><br>");
+                    else document.write("You decided not to proceed" + "<br><br>");
+
+                    //4. Calculate Compound Interest
+                    const A = P * Math.pow((1 + (R / 100)), N);
+                    const CI = A - P;
+                    document.write("Calculated CI is " + CI + "<br><br>");
+
+                    //5. setTimeout 
+                    function executeMe1() {
+                        document.write("Function timeout !!!" + "<br><br>");
+                    }
+                    setTimeout(executeMe1, 3000);
+
+                    //6. setInterval 
+                    function executeMe2() {
+                        document.write("Function called at regular interval !!!" + "<br><br>");
+                    }
+                    setInterval(executeMe2, 3000);
+                }
+
+            </script>
+        </div>
+    </div>
+    <button onclick="execute();">Click Here to Calculate CI</button>
+</body>
+
+</html>
